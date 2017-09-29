@@ -79,7 +79,7 @@ CMD ["python"]
 #RUN powershell -NoProfile -Command \
 #	pip install django-registration
 
-RUN choco install postgresql --version 9.1.3
+RUN choco install postgresql --version 9.1.3 -y --no-progress
 
 RUN git clone https://github.com/nescode/wagtailcmsdemo.git
 RUN cd wagtailcmsdemo; \ 
