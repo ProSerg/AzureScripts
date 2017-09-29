@@ -1,0 +1,40 @@
+FROM microsoft/iis
+
+RUN mkdir C:\site
+RUN mkdir C:\site\upload
+ADD space-science/ /site
+
+RUN powershell -NoProfile -Command \
+	Install-PackageProvider -Name nuget -Force
+
+RUN powershell -NoProfile -Command \
+	Install-PackageProvider -Name chocolatey -Force
+
+RUN powershell -NoProfile -Command \
+	Import-PackageProvider -Name chocolatey -Force
+RUN powershell -NoProfile -Command \
+	Get-PackageProvider -Name Chocolatey -Force
+RUN powershell -NoProfile -Command \
+	Find-Package -ProviderName Chocolatey -Name python | Install-Package
+
+RUN pip install wfastcgi
+
+RUN powershell -NoProfile -Command \
+    Import-module IISAdministration; \
+    New-IISSite -Name "Space-Science" -PhysicalPath C:\site\upload -BindingInformation "*:8000:"
+
+EXPOSE 8000
+
+
+
+RUN powershell -NoProfile -Command \
+	Find-Package python
+
+RUN powershell -NoProfile -Command \
+	Install-Package python -Version 3.6.2
+
+RUN pip install wfastcgi
+
+
+RUN powershell -NoProfile -Command \
+	Import-PackageProvider -Name nuget -Force
