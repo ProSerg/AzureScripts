@@ -79,7 +79,17 @@ CMD ["python"]
 #RUN powershell -NoProfile -Command \
 #	pip install django-registration
 
-RUN choco install postgresql --version 9.1.3 -y --no-progress
+Import-Module Install-Postgres
+# Install-Postgres -User "postgres" -Password "ChangeMe!"
+#Install-Postgres  
+#-User "postgres"  
+#-Password "ChangeMe!"  
+#-InstallUrl "http://get.enterprisedb.com/postgresql/postgresql-9.3.5-1-windows-x64.exe"  
+#-InstallPath "C:\Program Files\PostgreSQL\9.3"  
+#-DataPath "C:\Program Files\PostgreSQL\9.3\data"  
+#-Locale "Romanian, Romania"  
+#-Port 5432  
+#-ServiceName "postgresql"
 
 RUN git clone https://github.com/nescode/wagtailcmsdemo.git
 RUN cd wagtailcmsdemo; \ 
