@@ -12,8 +12,8 @@ RUN mkidr C:\monitoring
 ADD installApp.ps1 /Website
 RUN powershell  /Website/installApp.ps1
 
-ADD setupEnv.ps1 /Website
-RUN powershell  /Website/setupEnv.ps1 
+ADD installPy.ps1 /Website
+RUN powershell  /Website/installPy.ps1 
 
 
 ADD configIIS.ps1 /Website
