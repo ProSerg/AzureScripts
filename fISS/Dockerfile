@@ -1,6 +1,7 @@
 FROM microsoft/iis
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
+RUN Set-ExecutionPolicy UnRestricted;
 
 RUN mkdir C:\Website
 # RUN mkdir C:\Website
@@ -8,7 +9,7 @@ RUN mkdir C:\Website
 # ADD space-science/ /site
 ADD setupEnv.ps1 /Website
 
-RUN powershell -executionpolicy bypass /Website/setupEnv.ps1 
+RUN powershell  /Website/setupEnv.ps1 
 
 
 #RUN powershell -NoProfile -Command \
@@ -41,10 +42,10 @@ RUN powershell -executionpolicy bypass /Website/setupEnv.ps1
 #-Port 5432  
 #-ServiceName "postgresql"
 
-RUN git clone https://github.com/nescode/wagtailcmsdemo.git
-RUN cd wagtailcmsdemo; \ 
-	pip install -r requirements.txt; \
-	python manage.py migrate; \
-	python manage.py 0.0.0.0:8000;
+#RUN git clone https://github.com/nescode/wagtailcmsdemo.git
+#RUN cd wagtailcmsdemo; \ 
+#	pip install -r requirements.txt; \
+#	python manage.py migrate; \
+#	python manage.py 0.0.0.0:8000;
 
-EXPOSE 8000
+#EXPOSE 8000
