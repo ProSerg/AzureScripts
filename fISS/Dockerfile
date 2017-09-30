@@ -4,7 +4,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 RUN Set-ExecutionPolicy UnRestricted;
 
 RUN mkdir C:\Website
-RUN mkidr C:\monitoring
+RUN mkdir C:\monitoring
 
 # RUN mkdir C:\Website
 
