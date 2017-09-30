@@ -2,6 +2,7 @@ git clone https://github.com/pallets/flask-website.git ./Website/flask-website
 pip install Flask
 pip install Flask-OpenID
 pip install Flask-SQLAlchemy
+pip install whoosh
 Set-Location ./Website/flask-website
 Get-Location .
 Get-ChildItem .
