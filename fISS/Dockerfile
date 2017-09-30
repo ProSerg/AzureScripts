@@ -4,12 +4,21 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 RUN Set-ExecutionPolicy UnRestricted;
 
 RUN mkdir C:\Website
+RUN mkidr C:\monitoring
+
 # RUN mkdir C:\Website
 
 # ADD space-science/ /site
-ADD setupEnv.ps1 /Website
+ADD installApp.ps1 /Website
+RUN powershell  /Website/installApp.ps1
 
+ADD setupEnv.ps1 /Website
 RUN powershell  /Website/setupEnv.ps1 
+
+
+ADD configIIS.ps1 /Website
+RUN powershell  /Website/configIIS.ps1
+
 
 
 #RUN powershell -NoProfile -Command \
