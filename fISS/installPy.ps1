@@ -2,7 +2,7 @@ Set-ExecutionPolicy UnRestricted;
 
 $env:PYTHON_VERSION = "3.6.2"
 $env:PYTHON_RELEASE = "3.6.2"
-$env:PYTHON_PIP_VERSION = "9.0.3"
+$env:PYTHON_PIP_VERSION = "9.0.1"
 
 
 $url = ('https://www.python.org/ftp/python/{0}/python-{1}-amd64.exe' -f $env:PYTHON_RELEASE, $env:PYTHON_VERSION);
