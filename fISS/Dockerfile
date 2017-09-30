@@ -12,8 +12,6 @@ RUN mkdir C:\monitoring
 ADD installApp.ps1 /Website
 RUN powershell  /Website/installApp.ps1
 
-SHELL [""]
-
 ADD installPy.ps1 /Website
 RUN powershell  /Website/installPy.ps1 
 
