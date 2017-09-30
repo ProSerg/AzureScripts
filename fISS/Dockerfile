@@ -15,8 +15,6 @@ RUN powershell  /Website/installApp.ps1
 ADD installPy.ps1 /Website
 RUN powershell  /Website/installPy.ps1 
 
-SHELL ["pwd"]
-
 ADD configIIS.ps1 /Website
 RUN powershell  /Website/configIIS.ps1
 
