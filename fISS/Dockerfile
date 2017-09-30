@@ -12,12 +12,16 @@ RUN mkdir C:\monitoring
 ADD installApp.ps1 /Website
 RUN powershell  /Website/installApp.ps1
 
+SHELL [""]
+
 ADD installPy.ps1 /Website
 RUN powershell  /Website/installPy.ps1 
 
-
 ADD configIIS.ps1 /Website
 RUN powershell  /Website/configIIS.ps1
+
+ADD deployAPP.ps1 /Website
+RUN powershell  /Website/deployAPP.ps1
 
 
 
