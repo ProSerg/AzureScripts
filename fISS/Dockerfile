@@ -3,7 +3,7 @@ FROM microsoft/iis
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 
 RUN mkdir C:\Website
-RUN mkdir C:\Website
+# RUN mkdir C:\Website
 
 # ADD space-science/ /site
 ADD setupEnv.ps1 /Website
