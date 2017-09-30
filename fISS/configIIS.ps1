@@ -5,7 +5,7 @@ $Scripts ={
     $SiteName = "Test"
     $SitePath ="IIS:\sites\" + $SiteName
     
-    $WebsiteFolder = "C:\Website"
+    $WebsiteFolder = "C:\Website\flask-website"
     
     $MonitoringSite = "C:\monitoring"
     
